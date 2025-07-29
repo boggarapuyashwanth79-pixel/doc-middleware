@@ -37,7 +37,7 @@ def process_file(input: FileInput):
 
     print(f"📄 Extracted {len(extracted_text)} characters of text")
 
-   prompt = f"""
+    prompt = f"""
 You are a legal and business document analysis assistant.
 
 Analyze the following document text and return insights in **this exact format** with **each section starting on a new line**:
