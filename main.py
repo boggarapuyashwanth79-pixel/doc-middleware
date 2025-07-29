@@ -43,7 +43,7 @@ def call_groq(prompt: str) -> str:
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "mixtral-8x7b-32768",
+        "model": "mistral-saba-24b",
         "messages": [
             {"role": "system", "content": "You are a document analysis assistant."},
             {"role": "user", "content": prompt}
