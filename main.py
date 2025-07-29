@@ -64,6 +64,7 @@ Monetary Values: [list]
 Here is the document content:
 {extracted_text[:8000]}
 """
+
     response = call_groq(prompt)
     return {"insights": response}
 
