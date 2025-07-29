@@ -5,7 +5,7 @@ import pdfplumber
 from docx import Document
 import pytesseract
 from io import BytesIO
-import openai  # Or requests if you're calling Groq directly
+import requests  # Or requests if you're calling Groq directly
 import os
 
 app = FastAPI()
