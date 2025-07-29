@@ -3,5 +3,6 @@ uvicorn
 pdfplumber
 python-docx
 pytesseract
-openai
-PyPDF2
+requests
+pydantic
+python-multipart
