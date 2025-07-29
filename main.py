@@ -37,32 +37,33 @@ def process_file(input: FileInput):
 
     print(f"📄 Extracted {len(extracted_text)} characters of text")
 
-    prompt = f"""
+   prompt = f"""
 You are a legal and business document analysis assistant.
 
-Analyze the following document text and return insights in this format:
+Analyze the following document text and return insights in **this exact format** with **each section starting on a new line**:
 
 ---
-**Document Summary**: [A concise 3–5 sentence overview of what the document is about.]
 
-**Named Entities**:
-- People: [list]
-- Organizations: [list]
-- Dates: [list]
-- Monetary Values: [list]
+**Document Summary**  
+[A concise 3–5 sentence overview of what the document is about.]
 
-**Potential Risks or Red Flags**:
-- [List potential risks, ambiguous terms, non-compliance phrases, or anything unusual.]
+**Named Entities**  
+People: [list]  
+Organizations: [list]  
+Dates: [list]  
+Monetary Values: [list]  
 
-**Recommended Action Items**:
-- [List what should be done next — e.g., renew contract, confirm compliance, verify party ID, etc.]
+**Potential Risks or Red Flags**  
+- [Each item on a new line]
+
+**Recommended Action Items**  
+- [Each item on a new line]
 
 ---
 
 Here is the document content:
 {extracted_text[:8000]}
 """
-
     response = call_groq(prompt)
     return {"insights": response}
 
